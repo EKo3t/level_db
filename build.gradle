@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'shadow'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.0'
+    implementation group: 'org.iq80.leveldb', name: 'leveldb', version: '0.12'
+}
