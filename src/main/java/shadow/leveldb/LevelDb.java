@@ -32,7 +32,8 @@ public class LevelDb {
     }
 
     public <T> T get(String key, Class<T> tClass) {
-        return mapper.toTarget(instance.get(bytes(key)), tClass);
+        byte[] bytes = instance.get(bytes(key));
+        return bytes != null ? mapper.toTarget(instance.get(bytes(key)), tClass) : null;
     }
 
     public <TKey> void delete(TKey key) {
